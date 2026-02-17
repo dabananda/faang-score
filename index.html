@@ -28,6 +28,13 @@
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1"></script>
     <!-- html2canvas for screenshots -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <link rel="stylesheet" href="style.css" />
   </head>
   <body
@@ -43,7 +50,7 @@
         >
           🔥 FAANG Scorecard
         </h1>
-        <p class="text-gray-600">Your GitHub profile vs top tech companies</p>
+        <p class="text-gray-600">Evaluate your chances of breaking into top tech companies</p>
       </div>
 
       <!-- input area -->
@@ -51,7 +58,7 @@
         <input
           type="text"
           id="usernameInput"
-          placeholder="e.g., octocat"
+          placeholder="e.g., dabananda"
           class="flex-1 px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:border-transparent transition shadow-sm"
         />
         <button
@@ -96,7 +103,7 @@
           </div>
 
           <!-- STATS SECTION -->
-          <div id="statsSection" class="grid grid-cols-3 gap-3 mb-6">
+          <div id="statsSection" class="grid grid-cols md:grid-cols-3 gap-3 mb-6">
             <div class="stat-item text-center">
               <div
                 class="text-xs text-gray-600 font-semibold uppercase tracking-wide"
@@ -151,38 +158,57 @@
           <!-- company scores grid (brand colored) -->
           <div
             id="scoresGrid"
-            class="grid grid-cols-2 sm:grid-cols-3 gap-3 mb-6"
+            class="grid grid-cols-1 md:grid-cols-3 gap-3 mb-6"
           >
             <!-- filled dynamically -->
           </div>
         </div>
 
         <!-- action buttons -->
-        <div class="flex flex-wrap gap-3 mt-4">
+        <div class="flex flex-wrap gap-3 mt-4 justify-center">
           <button
             id="captureBtn"
             class="px-4 py-2 bg-white border border-indigo-300 text-indigo-700 rounded-lg hover:bg-indigo-50 transition font-medium"
           >
-            📸 Capture & Download
+            <i class="fa-solid fa-camera"></i> Capture & Share
           </button>
         </div>
 
         <!-- social share row (hidden until capture) -->
-        <div id="shareRow" class="mt-4 hidden flex-wrap gap-2 justify-center">
-          <button id="shareFb" class="social-btn">
-            <span>📘</span>
+        <div id="shareRow" class="mt-4 hidden flex flex-wrap gap-2 justify-center">
+          <!-- Facebook -->
+          <button
+            id="shareFb"
+            class="inline-flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-medium transition-all duration-200 bg-[#1877F2] text-white hover:bg-[#155fc4] hover:-translate-y-0.5 hover:shadow-md"
+          >
+            <i class="fa-brands fa-facebook-f text-lg"></i>
             Facebook
           </button>
-          <button id="shareTwitter" class="social-btn">
-            <span>🐦</span>
+
+          <!-- Twitter / X -->
+          <button
+            id="shareTwitter"
+            class="inline-flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-medium transition-all duration-200 bg-black text-white hover:bg-gray-800 hover:-translate-y-0.5 hover:shadow-md"
+          >
+            <i class="fa-brands fa-x-twitter text-lg"></i>
             Twitter
           </button>
-          <button id="shareLinkedin" class="social-btn">
-            <span>🔗</span>
+
+          <!-- LinkedIn -->
+          <button
+            id="shareLinkedin"
+            class="inline-flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-medium transition-all duration-200 bg-[#0A66C2] text-white hover:bg-[#084e96] hover:-translate-y-0.5 hover:shadow-md"
+          >
+            <i class="fa-brands fa-linkedin-in text-lg"></i>
             LinkedIn
           </button>
-          <button id="shareIg" class="social-btn">
-            <span>📷</span>
+
+          <!-- Instagram -->
+          <button
+            id="shareIg"
+            class="inline-flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-medium transition-all duration-200 bg-gradient-to-r from-[#833AB4] via-[#FD1D1D] to-[#FCB045] text-white hover:opacity-90 hover:-translate-y-0.5 hover:shadow-md"
+          >
+            <i class="fa-brands fa-instagram text-lg"></i>
             Instagram
           </button>
         </div>
